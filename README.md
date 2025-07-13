@@ -10,12 +10,7 @@
 - 🆕 **新标签页功能**：可直接打开浏览器新标签页，避免在短视频网站停留
 
 ## 默认屏蔽的短视频网站
-
 - **抖音系列**：douyin.com, www.douyin.com, m.douyin.com, aweme.snssdk.com
-- **快手系列**：kuaishou.com, www.kuaishou.com, m.kuaishou.com, kscdn.com
-- **小红书**：xiaohongshu.com, www.xiaohongshu.com, xhscdn.com
-- **腾讯系列**：weishi.qq.com, mvideo.qq.com
-- **其他平台**：pipigx.com, huoshan.com, xigua.com
 
 ## 安装方法
 
