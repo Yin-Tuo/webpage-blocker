@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "网址屏蔽器-杜绝防沉迷",
+  "name": "网址屏蔽器-杜绝沉迷",
   "version": "1.0.0",
   "description": "彻底屏蔽短视频网站，保护专注力和时间管理",
   "permissions": [
@@ -24,7 +24,7 @@
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "网址屏蔽器-杜绝防沉迷"
+    "default_title": "网址屏蔽器-杜绝沉迷"
   },
   "icons": {
     "16": "icon16.png",
