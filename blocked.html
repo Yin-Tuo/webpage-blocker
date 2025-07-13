@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>网站已被屏蔽</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .container {
+      background: white;
+      padding: 50px;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      text-align: center;
+      max-width: 600px;
+      margin: 20px;
+    }
+    
+    .icon {
+      font-size: 80px;
+      margin-bottom: 30px;
+    }
+    
+    h1 {
+      color: #e74c3c;
+      margin: 0 0 20px 0;
+      font-size: 36px;
+      font-weight: bold;
+    }
+    
+    .message {
+      color: #555;
+      font-size: 18px;
+      line-height: 1.6;
+      margin: 0 0 40px 0;
+    }
+    
+    h2 {
+      background: #f8f9fa;
+      padding: 10px 20px;
+	  font-size: 36px;
+      border-radius: 10px;
+      font-family: sans-serif;
+      font-weight: bold;
+      color: #e74c3c;
+      margin: 20px 0;
+    }
+    
+    .buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      padding: 15px 30px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+    
+    .btn-danger {
+      background: #e74c3c;
+      color: white;
+    }
+    
+    .btn-danger:hover {
+      background: #c0392b;
+      transform: translateY(-2px);
+    }
+    
+    .btn-secondary {
+      background: #95a5a6;
+      color: white;
+    }
+    
+    .btn-secondary:hover {
+      background: #7f8c8d;
+      transform: translateY(-2px);
+    }
+    
+    .footer {
+      margin-top: 40px;
+      color: #7f8c8d;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="icon">🚫</div>
+    <h1>访问被阻止</h1>
+    <div class="message">
+      此网站已被添加到屏蔽列表中，为了保护你的专注力和时间管理，访问已被阻止。
+    </div>
+    <h2>记住：你安装这个插件是因为你想要在学术道路上走得更远！不忘初心，牢记使命！<h2>
+    <div class="message">
+      继续访问此类网站可能会影响你的效率和目标达成。建议将注意力转向更有意义的活动。
+    </div>
+    
+    <div class="buttons">
+      <a href="https://github.com/" class="btn btn-secondary">访问Github</a>
+      <a href="https://pubmed.ncbi.nlm.nih.gov/" class="btn btn-secondary">访问Pubmed</a>
+    </div>
+    
+    <div class="footer">
+      网站屏蔽器正在保护你的专注时间 ⏰
+    </div>
+  </div>
+  
+  <script>
+    // 获取被屏蔽的域名
+    const urlParams = new URLSearchParams(window.location.search);
+    const blockedDomain = urlParams.get('blocked') || '未知域名';
+    document.getElementById('blockedDomain').textContent = blockedDomain;
+    
+    // 关闭标签页
+    function closeTab() {
+      window.close();
+      // 如果无法关闭，则重定向
+      setTimeout(() => {
+        window.location.href = 'about:blank';
+      }, 100);
+    }
+    
+    // 防止返回
+    history.pushState(null, null, location.href);
+    window.addEventListener('popstate', function() {
+      history.pushState(null, null, location.href);
+    });
+    
+    // 定期检查页面完整性
+    setInterval(() => {
+      if (!document.body.innerHTML.includes('访问被阻止')) {
+        location.reload();
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
